@@ -1,0 +1,130 @@
+{
+  "collections": [
+    {
+      "key": "Sahih al-Bukhari",
+      "name_arabic": "صحيح البخاري",
+      "total": 7563,
+      "books": 97,
+      "compiler": "Muhammad ibn Ismail al-Bukhari",
+      "died_AH": 256,
+      "default_grade": "Sahih",
+      "sunnah_com_key": "bukhari"
+    },
+    {
+      "key": "Sahih Muslim",
+      "name_arabic": "صحيح مسلم",
+      "total": 7563,
+      "books": 56,
+      "compiler": "Muslim ibn al-Hajjaj",
+      "died_AH": 261,
+      "default_grade": "Sahih",
+      "sunnah_com_key": "muslim"
+    },
+    {
+      "key": "Sunan Abu Dawud",
+      "name_arabic": "سنن أبي داود",
+      "total": 5274,
+      "books": 43,
+      "compiler": "Abu Dawud al-Sijistani",
+      "died_AH": 275,
+      "default_grade": null,
+      "sunnah_com_key": "abudawud"
+    },
+    {
+      "key": "Jami at-Tirmidhi",
+      "name_arabic": "جامع الترمذي",
+      "total": 3956,
+      "books": 49,
+      "compiler": "Muhammad ibn Isa at-Tirmidhi",
+      "died_AH": 279,
+      "default_grade": null,
+      "sunnah_com_key": "tirmidhi"
+    },
+    {
+      "key": "Sunan an-Nasa'i",
+      "name_arabic": "سنن النسائي",
+      "total": 5774,
+      "books": 51,
+      "compiler": "Ahmad ibn Shu'ayb an-Nasa'i",
+      "died_AH": 303,
+      "default_grade": null,
+      "sunnah_com_key": "nasai"
+    },
+    {
+      "key": "Sunan Ibn Majah",
+      "name_arabic": "سنن ابن ماجه",
+      "total": 4341,
+      "books": 37,
+      "compiler": "Muhammad ibn Yazid Ibn Majah",
+      "died_AH": 273,
+      "default_grade": null,
+      "sunnah_com_key": "ibnmajah"
+    },
+    {
+      "key": "Musnad Ahmad",
+      "name_arabic": "مسند أحمد",
+      "total": 27647,
+      "books": 182,
+      "compiler": "Ahmad ibn Hanbal",
+      "died_AH": 241,
+      "default_grade": null,
+      "sunnah_com_key": "ahmad"
+    },
+    {
+      "key": "Muwatta Malik",
+      "name_arabic": "موطأ مالك",
+      "total": 1857,
+      "books": 61,
+      "compiler": "Malik ibn Anas",
+      "died_AH": 179,
+      "default_grade": null,
+      "sunnah_com_key": "malik"
+    },
+    {
+      "key": "Riyad as-Salihin",
+      "name_arabic": "رياض الصالحين",
+      "total": 1896,
+      "books": 18,
+      "compiler": "Yahya ibn Sharaf an-Nawawi",
+      "died_AH": 676,
+      "default_grade": null,
+      "sunnah_com_key": "riyadussalihin"
+    },
+    {
+      "key": "Bulugh al-Maram",
+      "name_arabic": "بلوغ المرام",
+      "total": 1358,
+      "books": 16,
+      "compiler": "Ibn Hajar al-Asqalani",
+      "died_AH": 852,
+      "default_grade": null,
+      "sunnah_com_key": "bulugh"
+    },
+    {
+      "key": "Al-Adab Al-Mufrad",
+      "name_arabic": "الأدب المفرد",
+      "total": 1322,
+      "books": 76,
+      "compiler": "Muhammad ibn Ismail al-Bukhari",
+      "died_AH": 256,
+      "default_grade": null,
+      "sunnah_com_key": "adab"
+    },
+    {
+      "key": "Mishkat al-Masabih",
+      "name_arabic": "مشكاة المصابيح",
+      "total": 6294,
+      "books": 26,
+      "compiler": "Muhammad ibn Abdullah Khatib al-Tabrizi",
+      "died_AH": 741,
+      "default_grade": null,
+      "sunnah_com_key": "mishkat"
+    }
+  ],
+  "grades": {
+    "Sahih": "Authentic — chain of narrators is sound and text is not anomalous",
+    "Hasan": "Good — narrators are reliable but chain has slight weakness",
+    "Da'if": "Weak — chain has a significant weakness; not used as evidence alone",
+    "Mawdu": "Fabricated — invented, not a statement of the Prophet ﷺ"
+  }
+}

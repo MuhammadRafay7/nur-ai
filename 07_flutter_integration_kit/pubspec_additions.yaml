@@ -1,0 +1,57 @@
+# ─────────────────────────────────────────────────────────────────────────────
+# Add these to your main app's pubspec.yaml
+# Run `flutter pub get` after adding.
+# ─────────────────────────────────────────────────────────────────────────────
+
+# Already in minaret/pubspec.yaml (DO NOT duplicate):
+#   hive, hive_flutter, dio, path_provider
+
+# NEW — add these:
+dependencies:
+  # On-device Llama 3.2 inference (llama.cpp bindings for Flutter)
+  fllama: ^0.5.0
+
+  # Markdown rendering for AI responses
+  flutter_markdown: ^0.7.4
+
+  # Download progress indicator
+  percent_indicator: ^4.2.3
+
+
+# ─────────────────────────────────────────────────────────────────────────────
+# Add these to the flutter: > assets: list in pubspec.yaml
+# ─────────────────────────────────────────────────────────────────────────────
+flutter_assets_to_add:
+  - assets/quran_index.json
+  - assets/hadith_index.json
+
+
+# ─────────────────────────────────────────────────────────────────────────────
+# Android — add to android/app/build.gradle
+# ─────────────────────────────────────────────────────────────────────────────
+android_build_gradle: |
+  android {
+    defaultConfig {
+      ndk {
+        abiFilters "arm64-v8a"   // keep arm64 only — reduces APK size
+      }
+    }
+  }
+
+
+# ─────────────────────────────────────────────────────────────────────────────
+# iOS — in ios/Podfile, ensure minimum iOS 14:
+# ─────────────────────────────────────────────────────────────────────────────
+ios_podfile: |
+  platform :ios, '14.0'
+
+
+# ─────────────────────────────────────────────────────────────────────────────
+# Notes
+# ─────────────────────────────────────────────────────────────────────────────
+# • fllama ships prebuilt llama.cpp binaries for Android arm64 and iOS arm64.
+#   No CMake/NDK setup required.
+# • The model file (~1.8 GB) is NOT bundled — it is downloaded on first launch
+#   by ModelDownloader.download(url: 'YOUR_HUGGINGFACE_URL').
+# • After Colab training (notebook 04), upload the GGUF to Hugging Face and
+#   put the direct download URL in ModelDownloader or a remote-config value.

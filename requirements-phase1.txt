@@ -1,0 +1,8 @@
+# Phase 1 — Data Collection only
+# Install with: pip install -r requirements-phase1.txt
+# These are the only packages needed to run 01_data_collection/scripts/
+
+aiohttp>=3.9.0
+aiofiles>=23.2.0
+tqdm>=4.66.0
+colorama>=0.4.6

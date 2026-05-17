@@ -1,0 +1,62 @@
+# ─── Model files (too large for git) ─────────────────────────────────────────
+*.gguf
+*.bin
+*.safetensors
+*.pt
+*.pth
+05_model_output/checkpoints/
+05_model_output/merged/
+05_model_output/gguf/
+
+# ─── Raw data (downloaded, not committed) ─────────────────────────────────────
+01_data_collection/raw/
+02_dataset_formatting/raw_input/
+
+# ─── Formatted training data (regeneratable) ─────────────────────────────────
+02_dataset_formatting/formatted_output/
+
+# ─── Logs ────────────────────────────────────────────────────────────────────
+*.log
+logs/
+01_data_collection/logs/
+
+# ─── Python ──────────────────────────────────────────────────────────────────
+__pycache__/
+*.py[cod]
+*.pyo
+.pytest_cache/
+*.egg-info/
+dist/
+build/
+.eggs/
+htmlcov/
+.coverage
+
+# ─── Virtual environments ────────────────────────────────────────────────────
+venv/
+.venv/
+env/
+.env
+
+# ─── Secrets ─────────────────────────────────────────────────────────────────
+.env.local
+*.secret
+hf_token.txt
+
+# ─── Jupyter ─────────────────────────────────────────────────────────────────
+.ipynb_checkpoints/
+
+# ─── OS ──────────────────────────────────────────────────────────────────────
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# ─── IDE ─────────────────────────────────────────────────────────────────────
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# ─── Reports (regeneratable) ──────────────────────────────────────────────────
+04_evaluation/reports/
+02_dataset_formatting/quality_reports/

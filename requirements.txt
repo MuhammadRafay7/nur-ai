@@ -1,0 +1,41 @@
+# ─── Core async HTTP ─────────────────────────────────────────────────────────
+aiohttp==3.9.5
+aiofiles==23.2.1
+
+# ─── Progress & CLI ──────────────────────────────────────────────────────────
+tqdm==4.66.4
+colorama==0.4.6
+rich==13.7.1
+
+# ─── Data processing ─────────────────────────────────────────────────────────
+pandas==2.2.2
+numpy==1.26.4
+jsonlines==4.0.0
+
+# ─── ML / Training (Phase 3) ─────────────────────────────────────────────────
+# Installed separately inside Colab — listed here for reference
+# torch>=2.1.0
+# transformers>=4.40.0
+# datasets>=2.19.0
+# peft>=0.10.0
+# trl>=0.8.6
+# bitsandbytes>=0.43.0
+# accelerate>=0.29.0
+# unsloth[colab-new] @ git+https://github.com/unslothai/unsloth.git
+
+# ─── GGUF export / local inference (Phase 6) ─────────────────────────────────
+llama-cpp-python==0.2.77
+
+# ─── API server (Phase 6 – optional) ─────────────────────────────────────────
+fastapi==0.111.0
+uvicorn[standard]==0.29.0
+
+# ─── Text similarity (Phase 2 deduplication) ─────────────────────────────────
+scikit-learn==1.4.2
+sentence-transformers==2.7.0
+
+# ─── Environment & utils ─────────────────────────────────────────────────────
+python-dotenv==1.0.1
+pyyaml==6.0.1
+httpx==0.27.0
+tenacity==8.3.0

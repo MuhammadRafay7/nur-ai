@@ -1,0 +1,7 @@
+# Phase 2 — Dataset Formatting
+# Install with: pip install -r requirements-phase2.txt
+
+jsonlines>=4.0.0
+scikit-learn>=1.4.0
+numpy>=1.26.0
+tqdm>=4.66.0
