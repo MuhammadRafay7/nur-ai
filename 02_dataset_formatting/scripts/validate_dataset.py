@@ -52,7 +52,7 @@ CATEGORY_MIN_TARGETS: dict[str, int] = {
     "aqeedah":        5,
     "dua":            5,
     "fiqh":           4,
-    "names_of_allah": 85,  # 99 generated; ~13 deduped as near-similar
+    "names_of_allah": 80,  # 99 generated; dedup may reduce to ~84
 }
 
 # Valid Quran range: surah 1–114, ayah 1–286 (max is Al-Baqarah 286)

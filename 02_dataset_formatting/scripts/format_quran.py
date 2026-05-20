@@ -111,27 +111,17 @@ def format_verse_answer(
     arabic: str,
     english: str,
     tafsir: str = "",
+    transliteration: str = "",
 ) -> str:
-    """Build a complete, formatted answer for a Quranic verse.
-
-    Args:
-        surah_name: Surah name in English (e.g. 'Al-Baqarah').
-        surah_num: Surah number (1–114).
-        ayah_num: Ayah number within the surah.
-        arabic: Arabic text of the verse.
-        english: English translation.
-        tafsir: Optional Ibn Kathir commentary.
-
-    Returns:
-        Formatted multi-line answer string.
-    """
+    """Build a complete, formatted answer for a Quranic verse."""
     parts: list[str] = [
         f"Allah ﷻ says in Surah {surah_name} ({surah_num}:{ayah_num}):\n",
         arabic,
-        f'\nTranslation (Sahih International):\n"{english}"',
     ]
+    if transliteration:
+        parts.append(f"Transliteration: {transliteration}")
+    parts.append(f'\nTranslation (Sahih International):\n"{english}"')
     if tafsir and len(tafsir.strip()) > 50:
-        # Truncate very long tafsir for training (keep first 600 chars)
         tafsir_short = tafsir.strip()
         if len(tafsir_short) > 600:
             tafsir_short = tafsir_short[:600].rsplit(" ", 1)[0] + "..."
@@ -208,13 +198,14 @@ def generate_direct_verse_pairs(
             arabic = ayah.get("arabic_text", "")
             english = ayah.get("english_translation", "")
             tafsir = ayah.get("tafsir_ibn_kathir", "")
+            transliteration = ayah.get("transliteration", "")
 
             if not arabic or not english:
                 continue
 
             template = rng.choice(_DIRECT_VERSE_QUESTIONS)
             question = template.format(name=s_name_t, num=s_num, ayah=a_num)
-            answer = format_verse_answer(s_name_t, s_num, a_num, arabic, english, tafsir)
+            answer = format_verse_answer(s_name_t, s_num, a_num, arabic, english, tafsir, transliteration)
 
             pairs.append({
                 "instruction": question,

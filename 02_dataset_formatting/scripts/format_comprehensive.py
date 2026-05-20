@@ -128,12 +128,15 @@ def _build_quran_section(quran_refs: list[str], quran_lookup: dict[str, Any]) ->
         v = quran_lookup.get(ref)
         if not v:
             continue
-        arabic = v.get("arabic", "")
+        arabic      = v.get("arabic", "")
         translation = v.get("translation", "")
-        name = v.get("surah_name", "")
-        lines.append(
-            f"📖 Surah {name} ({ref}):\n{arabic}\n\"{translation}\""
-        )
+        name        = v.get("surah_name", "")
+        translit    = v.get("transliteration", "")
+        entry = f"Surah {name} ({ref}):\n{arabic}"
+        if translit:
+            entry += f"\nTransliteration: {translit}"
+        entry += f'\nTranslation: "{translation}"'
+        lines.append(entry)
     if not lines:
         return ""
     return "**Quranic Evidence:**\n\n" + "\n\n".join(lines)
@@ -143,17 +146,23 @@ def _build_hadith_section(hadiths: list[dict[str, Any]]) -> str:
     lines: list[str] = []
     for h in hadiths[:3]:
         collection = h.get("collection", "")
-        book = h.get("book", "")
-        number = h.get("number", "")
-        narrator = h.get("narrator", "")
-        text = h.get("text", "")
-        grade = h.get("grade", "Sahih")
+        book       = h.get("book", "")
+        number     = h.get("number", "")
+        narrator   = h.get("narrator", "")
+        text       = h.get("text", "")
+        arabic     = h.get("arabic", "")
+        grade      = h.get("grade", "Sahih")
 
-        num_str = f" (Hadith {number})" if number else ""
+        num_str  = f", Hadith {number}" if number else ""
         book_str = f" — {book}" if book else ""
-        narr_str = f" — Narrated by {narrator}" if narrator else ""
-        header = f"📚 {collection}{book_str}{num_str}{narr_str} (Grade: {grade}):"
-        lines.append(f'{header}\n"{text}"')
+        ref_line = f"({collection}{book_str}{num_str}) — Grade: {grade}"
+
+        entry = f'The Prophet \u00f7 said: "{text}"\n{ref_line}'
+        if narrator:
+            entry = f'The Prophet \u00f7 said: "{text}"\nNarrated by: {narrator}\n{ref_line}'
+        if arabic:
+            entry = f"{arabic}\n{entry}"
+        lines.append(entry)
     if not lines:
         return ""
     return "**Hadith Evidence:**\n\n" + "\n\n".join(lines)
@@ -163,31 +172,25 @@ def _build_fiqh_section(fiqh: dict[str, Any]) -> str:
     if not fiqh:
         return ""
     consensus = fiqh.get("consensus", "")
-    ruling = fiqh.get("ruling", "")
-    details = fiqh.get("details", "")
-    hanafi = fiqh.get("hanafi", "")
-    maliki = fiqh.get("maliki", "")
-    shafi = fiqh.get("shafi", "")
-    hanbali = fiqh.get("hanbali", "")
+    ruling    = fiqh.get("ruling", "")
+    details   = fiqh.get("details", "")
+    hanafi    = fiqh.get("hanafi", "")
+    maliki    = fiqh.get("maliki", "")
+    shafi     = fiqh.get("shafi", "")
+    hanbali   = fiqh.get("hanbali", "")
 
-    lines: list[str] = ["**Fiqh Rulings:**\n"]
+    lines: list[str] = ["**Scholarly Rulings (Madhabs):**\n"]
     if consensus == "IJMA":
-        lines.append("[IJMA] All four madhabs are in agreement.")
+        lines.append("All four madhabs are in agreement (Ijma).")
     elif consensus == "KHILAF":
-        lines.append("[KHILAF] Scholars hold differing opinions.")
+        lines.append("Scholars hold differing opinions (Ikhtilaf).")
     if ruling:
         lines.append(f"\nGeneral ruling: {ruling}")
     if details:
         lines.append(f"\n{details}")
-    madhabs = [
-        ("Hanafi", hanafi),
-        ("Maliki", maliki),
-        ("Shafi'i", shafi),
-        ("Hanbali", hanbali),
-    ]
-    for name, pos in madhabs:
+    for school, pos in [("Hanafi", hanafi), ("Maliki", maliki), ("Shafi'i", shafi), ("Hanbali", hanbali)]:
         if pos:
-            lines.append(f"\n• **{name}:** {pos}")
+            lines.append(f"\n\u2022 **{school}:** {pos}")
     return "\n".join(lines)
 
 
@@ -196,140 +199,71 @@ def _build_answer(
     ans_type: str,
     quran_lookup: dict[str, Any],
 ) -> str:
-    title = topic.get("title", "")
-    explanation = topic.get("explanation", "")
-    quran_refs = topic.get("quran_refs", [])
-    hadiths = topic.get("hadith", [])
-    fiqh = topic.get("fiqh", {})
-    summary = topic.get("summary", "")
-    conditions = topic.get("conditions", "")
+    """Build a unified 5-section answer for any question type.
+
+    Structure (every answer):
+      1. Explanation — in the light of Quran and Hadith
+      2. Quranic Evidence — Arabic + transliteration + reference + translation
+      3. Hadith Evidence — text + collection + number + grade
+      4. Scholarly Rulings — 4 madhabs
+      5. Conclusion
+    """
+    title          = topic.get("title", "")
+    explanation    = topic.get("explanation", "")
+    quran_refs     = topic.get("quran_refs", [])
+    hadiths        = topic.get("hadith", [])
+    fiqh           = topic.get("fiqh", {})
+    summary        = topic.get("summary", "")
+    conditions     = topic.get("conditions", "")
     misconceptions = topic.get("misconceptions", "")
+    practical      = topic.get("practical", "")
+    arabic_name    = topic.get("arabic", "")
 
     q_section = _build_quran_section(quran_refs, quran_lookup)
     h_section = _build_hadith_section(hadiths)
     f_section = _build_fiqh_section(fiqh)
 
-    # ── 1. Comprehensive — all 5 sections ────────────────────────────────────
-    if ans_type == "comprehensive":
-        parts: list[str] = []
-        if explanation:
-            parts.append(f"**{title}**\n\n{explanation}")
-        if q_section:
-            parts.append(q_section)
-        if h_section:
-            parts.append(h_section)
-        if f_section:
-            parts.append(f_section)
-        if summary:
-            parts.append(f"**Summary:**\n{summary}")
-        return "\n\n".join(parts) + CONSULT_FOOTER
-
-    # ── 2. Quran-focused ─────────────────────────────────────────────────────
-    elif ans_type == "quran":
-        if not q_section:
-            return ""
-        intro = explanation.split(".")[0] + "." if "." in explanation else explanation[:200]
-        return f"Regarding **{title}**, the Quran provides clear guidance:\n\n{intro}\n\n{q_section}"
-
-    # ── 3. Hadith-focused ────────────────────────────────────────────────────
-    elif ans_type == "hadith":
-        if not h_section:
-            return ""
-        return f"The Prophet ﷺ provided important guidance on **{title}**:\n\n{h_section}"
-
-    # ── 4. Fiqh-focused ──────────────────────────────────────────────────────
-    elif ans_type == "fiqh":
-        if not f_section:
-            return ""
-        return (
-            f"Regarding the Islamic legal ruling on **{title}**:\n\n"
-            f"{f_section}" + CONSULT_FOOTER
-        )
-
-    # ── 5. Importance ────────────────────────────────────────────────────────
-    elif ans_type == "importance":
-        parts = [f"**Why {title} is Important in Islam**\n\n{explanation}"]
-        if q_section:
-            parts.append(q_section)
-        if h_section:
-            parts.append(h_section)
-        if summary:
-            parts.append(f"**In Summary:**\n{summary}")
-        return "\n\n".join(parts)
-
-    # ── 6. Combined evidence (Quran + Hadith) ────────────────────────────────
-    elif ans_type == "evidence":
-        parts = [f"**Islamic Evidence for {title}:**"]
-        if q_section:
-            parts.append(q_section)
-        if h_section:
-            parts.append(h_section)
-        if not q_section and not h_section:
-            return ""
-        return "\n\n".join(parts)
-
-    # ── 7. Application ───────────────────────────────────────────────────────
+    # ── Opening paragraph varies by question type ─────────────────────────────
+    if ans_type == "definition":
+        arabic_str = f" ({arabic_name})" if arabic_name else ""
+        opening = f"**{title}{arabic_str}**\n\n{explanation}"
+    elif ans_type == "conditions":
+        body = conditions if conditions else explanation
+        opening = f"**Conditions and Requirements for {title}:**\n\n{body}"
+    elif ans_type == "misconception":
+        body = misconceptions if misconceptions else explanation
+        opening = f"**Clarifying Misconceptions about {title}:**\n\n{body}"
     elif ans_type == "application":
-        practical = topic.get("practical", "")
-        parts = [f"**Practicing {title} as a Muslim:**\n\n{explanation}"]
+        body = explanation
         if practical:
-            parts.append(f"**Practical Steps:**\n{practical}")
-        elif summary:
-            parts.append(f"**Key Points:**\n{summary}")
-        return "\n\n".join(parts) + CONSULT_FOOTER
-
-    # ── 8. Brief summary ─────────────────────────────────────────────────────
-    elif ans_type == "brief":
-        if summary:
-            core = f"**{title}:** {summary}"
-        else:
-            core = explanation[:400]
-        if q_section:
-            core += f"\n\n{q_section}"
-        return core
-
-    # ── 9. Definition ────────────────────────────────────────────────────────
-    elif ans_type == "definition":
-        arabic = topic.get("arabic", "")
-        arabic_str = f" ({arabic})" if arabic else ""
-        intro = explanation[:500] if len(explanation) > 500 else explanation
-        return f"**{title}{arabic_str}**\n\n{intro}"
-
-    # ── 10. Ruling ───────────────────────────────────────────────────────────
+            body += f"\n\n**Practical Steps:**\n{practical}"
+        opening = f"**Practicing {title} as a Muslim:**\n\n{body}"
+    elif ans_type == "importance":
+        opening = f"**The Importance of {title} in Islam:**\n\n{explanation}"
     elif ans_type == "ruling":
         ruling = fiqh.get("ruling", "")
-        parts = [f"**Islamic Ruling on {title}:**\n\n{ruling or explanation[:300]}"]
-        if f_section:
-            parts.append(f_section)
-        if q_section:
-            parts.append(q_section)
-        if h_section:
-            parts.append(h_section)
-        return "\n\n".join(parts) + CONSULT_FOOTER
+        opening = f"**Islamic Ruling on {title}:**\n\n{ruling or explanation}"
+    elif ans_type == "brief":
+        opening = f"**{title}:**\n\n{summary or explanation[:400]}"
+    else:
+        # comprehensive, quran, hadith, fiqh, evidence
+        opening = f"**{title}**\n\n{explanation}"
 
-    # ── 11. Conditions ───────────────────────────────────────────────────────
-    elif ans_type == "conditions":
-        if not conditions:
-            return ""
-        parts = [f"**Conditions and Requirements for {title}:**\n\n{conditions}"]
-        if f_section:
-            parts.append(f_section)
-        return "\n\n".join(parts) + CONSULT_FOOTER
+    # ── Assemble the full 5-section structure ─────────────────────────────────
+    parts: list[str] = [opening]
+    if q_section:
+        parts.append(q_section)
+    if h_section:
+        parts.append(h_section)
+    if f_section:
+        parts.append(f_section)
+    if summary:
+        parts.append(f"**Conclusion:**\n{summary}")
 
-    # ── 12. Misconception ────────────────────────────────────────────────────
-    elif ans_type == "misconception":
-        if not misconceptions:
-            return ""
-        parts = [
-            f"**Clarifying Misconceptions about {title}:**\n\n{misconceptions}",
-        ]
-        if q_section:
-            parts.append(q_section)
-        if h_section:
-            parts.append(h_section)
-        return "\n\n".join(parts)
-
-    return ""
+    result = "\n\n".join(filter(None, parts))
+    if fiqh or ans_type in ("comprehensive", "fiqh", "ruling", "conditions"):
+        result += CONSULT_FOOTER
+    return result
 
 
 # ─── Main generator ───────────────────────────────────────────────────────────
@@ -366,9 +300,10 @@ def generate_comprehensive_pairs(kb_dir: Path) -> list[dict[str, Any]]:
             for ayah in surah.get("ayahs", []):
                 key = f"{s_num}:{ayah['ayah_number']}"
                 quran_lookup[key] = {
-                    "arabic": ayah.get("arabic_text", ""),
-                    "translation": ayah.get("english_translation", ""),
-                    "surah_name": s_name,
+                    "arabic":          ayah.get("arabic_text", ""),
+                    "translation":     ayah.get("english_translation", ""),
+                    "surah_name":      s_name,
+                    "transliteration": ayah.get("transliteration", ""),
                 }
         logger.info("Quran lookup built: %d verses", len(quran_lookup))
     else:

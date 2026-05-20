@@ -68,6 +68,14 @@ from format_additional_10k import generate_additional_pairs
 from format_comprehensive import generate_comprehensive_pairs
 from format_fatwa import generate_fatwa_pairs
 from format_books_kb import generate_books_kb_pairs
+from format_new_books import generate_new_books_pairs
+from format_tafsir import generate_tafsir_pairs
+from format_biographical import generate_biographical_pairs
+from format_lists import generate_lists_pairs
+from format_madhab_specific import generate_madhab_pairs
+from format_practical import generate_practical_pairs
+from format_hadith_explanation import generate_hadith_explanation_pairs
+from format_translation import generate_translation_pairs
 
 # ─── Constants ────────────────────────────────────────────────────────────────
 
@@ -202,14 +210,14 @@ def load_names(raw_dir: Path, logger: logging.Logger) -> dict[str, Any]:
 # ─── Pair assembly ────────────────────────────────────────────────────────────
 
 def add_timestamps(pairs: list[dict[str, Any]]) -> None:
-    """Add generated_at timestamp to every pair's metadata in-place.
-
-    Args:
-        pairs: List of Q&A pair dicts to modify.
-    """
+    """Add generated_at timestamp and normalise metadata fields in-place."""
     ts = datetime.now(timezone.utc).isoformat()
     for p in pairs:
-        p["metadata"]["generated_at"] = ts
+        meta = p.setdefault("metadata", {})
+        meta["generated_at"] = ts
+        # Ensure every pair has a sources field (required by validator)
+        if "sources" not in meta and "source" not in meta:
+            meta["sources"] = []
 
 
 def generate_all_pairs(
@@ -290,10 +298,67 @@ def generate_all_pairs(
             all_pairs.extend(books_kb_pairs)
         except Exception as exc:  # noqa: BLE001
             logger.warning("Classical books KB pairs → SKIPPED (%s)", exc)
+
     else:
         logger.warning(
             "Knowledge bases dir not found (%s) — run Phase 1 and create knowledge_bases/", kb_dir
         )
+
+    try:
+        new_books_pairs = generate_new_books_pairs(seed=42)
+        logger.info("%-35s → %d pairs", "New real-book pairs", len(new_books_pairs))
+        all_pairs.extend(new_books_pairs)
+    except Exception as exc:  # noqa: BLE001
+        logger.warning("New real-book pairs → SKIPPED (%s)", exc)
+
+    try:
+        tafsir_pairs = generate_tafsir_pairs(seed=42)
+        logger.info("%-35s → %d pairs", "English tafsir pairs", len(tafsir_pairs))
+        all_pairs.extend(tafsir_pairs)
+    except Exception as exc:  # noqa: BLE001
+        logger.warning("English tafsir pairs → SKIPPED (%s)", exc)
+
+    try:
+        bio_pairs = generate_biographical_pairs(seed=42)
+        logger.info("%-35s → %d pairs", "Biography pairs", len(bio_pairs))
+        all_pairs.extend(bio_pairs)
+    except Exception as exc:  # noqa: BLE001
+        logger.warning("Biography pairs → SKIPPED (%s)", exc)
+
+    try:
+        list_pairs = generate_lists_pairs(seed=42)
+        logger.info("%-35s → %d pairs", "List/names pairs", len(list_pairs))
+        all_pairs.extend(list_pairs)
+    except Exception as exc:  # noqa: BLE001
+        logger.warning("List/names pairs → SKIPPED (%s)", exc)
+
+    try:
+        madhab_pairs = generate_madhab_pairs(seed=42)
+        logger.info("%-35s → %d pairs", "Madhab-specific pairs", len(madhab_pairs))
+        all_pairs.extend(madhab_pairs)
+    except Exception as exc:  # noqa: BLE001
+        logger.warning("Madhab-specific pairs → SKIPPED (%s)", exc)
+
+    try:
+        practical_pairs = generate_practical_pairs(seed=42)
+        logger.info("%-35s → %d pairs", "Practical how-to pairs", len(practical_pairs))
+        all_pairs.extend(practical_pairs)
+    except Exception as exc:  # noqa: BLE001
+        logger.warning("Practical how-to pairs → SKIPPED (%s)", exc)
+
+    try:
+        hadith_exp_pairs = generate_hadith_explanation_pairs(seed=42)
+        logger.info("%-35s → %d pairs", "Hadith explanation pairs", len(hadith_exp_pairs))
+        all_pairs.extend(hadith_exp_pairs)
+    except Exception as exc:  # noqa: BLE001
+        logger.warning("Hadith explanation pairs → SKIPPED (%s)", exc)
+
+    try:
+        translation_pairs = generate_translation_pairs(seed=42)
+        logger.info("%-35s → %d pairs", "Translation pairs", len(translation_pairs))
+        all_pairs.extend(translation_pairs)
+    except Exception as exc:  # noqa: BLE001
+        logger.warning("Translation pairs → SKIPPED (%s)", exc)
 
     return all_pairs
 
