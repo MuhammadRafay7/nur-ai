@@ -1,0 +1,31 @@
+{
+  "category": "hadith",
+  "description": "Hadith knowledge, attribution, chains, and Islamic sciences of hadith",
+  "pass_criteria": {
+    "min_arabic_rate": 0.8,
+    "min_grade_citation_rate": 0.9,
+    "zero_fabrication": true
+  },
+  "questions": [
+    {"id": "hadith_01", "question": "State the first hadith in Sahih Bukhari in full with Arabic and English, and explain its meaning.", "expected_refs": ["bukhari:1"], "must_contain": ["Arabic", "intentions", "niyyah", "Umar"]},
+    {"id": "hadith_02", "question": "What are the Five Pillars of Islam according to the well-known hadith? State it fully with source.", "expected_refs": ["bukhari:8", "muslim:16"], "must_contain": ["Arabic", "shahada", "salah", "zakat", "sawm", "hajj"]},
+    {"id": "hadith_03", "question": "State the Hadith of Jibreel (Gabriel) in full — about Islam, Iman, and Ihsan. Give Arabic and source.", "expected_refs": ["muslim:8"], "must_contain": ["Arabic", "Islam", "Iman", "Ihsan", "Jibreel"]},
+    {"id": "hadith_04", "question": "What did the Prophet ﷺ say about the best of people? Cite the exact hadith with grade.", "expected_refs": ["bukhari:5027"], "must_contain": ["Quran", "teach", "learn"]},
+    {"id": "hadith_05", "question": "What is the hadith about the importance of seeking knowledge? Give Arabic, source, and grade.", "expected_refs": [], "must_contain": ["seek knowledge", "Muslim", "obligatory"]},
+    {"id": "hadith_06", "question": "State the hadith about the rights of a Muslim upon another Muslim. Give Arabic and source.", "expected_refs": ["muslim:2162", "bukhari:1240"], "must_contain": ["six", "rights", "greeting", "sneeze", "funeral"]},
+    {"id": "hadith_07", "question": "What did the Prophet ﷺ say about the virtue of Surah Al-Fatiha? Cite the hadith with grade.", "expected_refs": [], "must_contain": ["greatest surah", "Bukhari", "Sahih"]},
+    {"id": "hadith_08", "question": "What is the hadith about the mercy of Allah? State the one about 100 parts of mercy.", "expected_refs": ["muslim:2752", "bukhari:6469"], "must_contain": ["100", "one part", "mercy", "creatures"]},
+    {"id": "hadith_09", "question": "What did the Prophet ﷺ say about honoring the mother? Cite the exact hadith 3 times about mother.", "expected_refs": ["bukhari:5971", "muslim:2548"], "must_contain": ["mother", "mother", "mother", "father"]},
+    {"id": "hadith_10", "question": "State the Arba'een (40 Hadith) by Imam Nawawi — give the first 5 hadiths with Arabic and sources.", "expected_refs": ["nawawi40"], "must_contain": ["Arabic", "intentions", "Islam", "Jibreel"]},
+    {"id": "hadith_11", "question": "What did the Prophet ﷺ say about backbiting (ghibah)? Cite the exact hadith.", "expected_refs": ["muslim:2589"], "must_contain": ["brother", "mention", "dislikes"]},
+    {"id": "hadith_12", "question": "What is the hadith about the virtue of sending salawat on the Prophet ﷺ? Give Arabic and source.", "expected_refs": [], "must_contain": ["salawat", "Allah", "ten"]},
+    {"id": "hadith_13", "question": "What did the Prophet ﷺ say about the prohibition of anger? State the hadith in full.", "expected_refs": ["bukhari:6116"], "must_contain": ["do not", "angry", "three"]},
+    {"id": "hadith_14", "question": "What is the hadith about good character (akhlaq)? State the most comprehensive one.", "expected_refs": ["tirmidhi:2004"], "must_contain": ["character", "good", "complete"]},
+    {"id": "hadith_15", "question": "What did the Prophet ﷺ say about the signs of a hypocrite (munafiq)? Give the exact hadith.", "expected_refs": ["bukhari:33", "muslim:59"], "must_contain": ["three", "lies", "betrays", "breaks promise"]},
+    {"id": "hadith_16", "question": "What is the hadith about the superiority of the Arabic language? Verify if this is authentic.", "expected_refs": [], "must_contain": ["weak", "fabricated", "not authentic", "verify"]},
+    {"id": "hadith_17", "question": "State the hadith about the virtue of dhikr (remembrance of Allah). Give Arabic and source.", "expected_refs": [], "must_contain": ["remembrance", "Allah", "heart"]},
+    {"id": "hadith_18", "question": "What did the Prophet ﷺ say about the reward of praying in congregation (jama'ah)?", "expected_refs": ["bukhari:645", "muslim:650"], "must_contain": ["27", "degrees", "congregation"]},
+    {"id": "hadith_19", "question": "What is the hadith about the importance of truthfulness (sidq)? Give Arabic and source.", "expected_refs": ["bukhari:6094"], "must_contain": ["truthfulness", "righteousness", "paradise"]},
+    {"id": "hadith_20", "question": "What did the Prophet ﷺ say about avoiding what is doubtful (shubuhaat)? State the complete hadith.", "expected_refs": ["bukhari:52", "muslim:1599"], "must_contain": ["halal", "haram", "doubtful", "heart"]}
+  ]
+}

@@ -1,0 +1,31 @@
+{
+  "category": "quran_tafsir",
+  "description": "Quran recitation, verse meanings, tafsir — must always include Arabic text and verse reference",
+  "pass_criteria": {
+    "min_arabic_rate": 0.95,
+    "min_reference_rate": 0.95,
+    "zero_fabrication": true
+  },
+  "questions": [
+    {"id": "qt_01", "question": "Recite Surah Al-Fatiha (1) with full Arabic text and explain its meaning verse by verse.", "expected_refs": ["quran:1:1", "quran:1:2"], "must_contain": ["Arabic", "bismillah", "alhamdulillah"]},
+    {"id": "qt_02", "question": "What is Ayat al-Kursi (2:255)? Give the full Arabic text, translation, and its virtues from hadith.", "expected_refs": ["quran:2:255"], "must_contain": ["Arabic", "2:255", "throne"]},
+    {"id": "qt_03", "question": "Explain the tafsir of Surah Al-Asr (103). What does Ibn Kathir say about this surah?", "expected_refs": ["quran:103:1", "quran:103:2", "quran:103:3"], "must_contain": ["time", "loss", "faith", "righteous deeds"]},
+    {"id": "qt_04", "question": "What does Surah Al-Ikhlas (112) say? Give Arabic, explain why it equals one-third of the Quran.", "expected_refs": ["quran:112:1"], "must_contain": ["Arabic", "Ahad", "Samad"]},
+    {"id": "qt_05", "question": "Explain the tafsir of Surah Al-Baqarah 2:286 — 'Allah does not burden a soul beyond that it can bear.'", "expected_refs": ["quran:2:286"], "must_contain": ["Arabic", "burden", "soul"]},
+    {"id": "qt_06", "question": "What is the significance of the last two verses of Surah Al-Baqarah (2:285-286)?", "expected_refs": ["quran:2:285", "quran:2:286"], "must_contain": ["Arabic", "messenger", "believers", "forgive"]},
+    {"id": "qt_07", "question": "Explain Surah Al-Kahf 18:10. What is the story of the People of the Cave?", "expected_refs": ["quran:18:10"], "must_contain": ["cave", "youth", "mercy"]},
+    {"id": "qt_08", "question": "What does Quran 49:13 say about the origin of nations and races? Give the full Arabic and tafsir.", "expected_refs": ["quran:49:13"], "must_contain": ["Arabic", "nations", "tribes", "most noble", "taqwa"]},
+    {"id": "qt_09", "question": "Explain the verse of light (Ayat al-Nur) in Surah An-Nur (24:35) with full Arabic and tafsir.", "expected_refs": ["quran:24:35"], "must_contain": ["Arabic", "light", "lamp", "niche"]},
+    {"id": "qt_10", "question": "What does Surah Yasin (36) say about the signs of Allah in nature? Cite specific verses.", "expected_refs": ["quran:36"], "must_contain": ["Arabic", "sun", "moon", "night"]},
+    {"id": "qt_11", "question": "Explain Surah Al-Mulk (67:1-3) — the blessed one in whose hand is dominion.", "expected_refs": ["quran:67:1", "quran:67:2", "quran:67:3"], "must_contain": ["Arabic", "dominion", "death", "life", "test"]},
+    {"id": "qt_12", "question": "What does the Quran say about Riba (interest) in Surah Al-Baqarah 2:275-279? Give the Arabic.", "expected_refs": ["quran:2:275", "quran:2:278"], "must_contain": ["Arabic", "forbidden", "trade"]},
+    {"id": "qt_13", "question": "Explain Surah Az-Zumar 39:53 — the verse of hope and mercy for sinners.", "expected_refs": ["quran:39:53"], "must_contain": ["Arabic", "despair", "mercy", "forgive"]},
+    {"id": "qt_14", "question": "What does Surah Al-Inshirah (94) say? Give Arabic, translation, and context of revelation.", "expected_refs": ["quran:94:1"], "must_contain": ["Arabic", "chest", "burden", "hardship", "ease"]},
+    {"id": "qt_15", "question": "Explain the tafsir of Surah Al-Duha (93). What was its context of revelation?", "expected_refs": ["quran:93:1"], "must_contain": ["Arabic", "morning", "forsaken", "orphan"]},
+    {"id": "qt_16", "question": "What does Quran 2:153 say about patience and prayer? Give full Arabic and explanation.", "expected_refs": ["quran:2:153"], "must_contain": ["Arabic", "patience", "prayer", "patient"]},
+    {"id": "qt_17", "question": "Explain Surah Al-Hujurat 49:11-12 on backbiting and suspicion.", "expected_refs": ["quran:49:11", "quran:49:12"], "must_contain": ["Arabic", "mockery", "suspicion", "backbite", "dead brother"]},
+    {"id": "qt_18", "question": "What is the story of Prophet Ibrahim (Abraham) in the Quran? Cite key verses.", "expected_refs": ["quran:2:124", "quran:21:51"], "must_contain": ["Ibrahim", "idol", "fire", "Imam"]},
+    {"id": "qt_19", "question": "Explain Surah Al-Fajr (89) — the verse about the satisfied soul.", "expected_refs": ["quran:89:27", "quran:89:28"], "must_contain": ["Arabic", "soul", "satisfied", "return"]},
+    {"id": "qt_20", "question": "What does Quran 3:85 say about Islam as the only accepted religion? Give full Arabic.", "expected_refs": ["quran:3:85"], "must_contain": ["Arabic", "Islam", "accept", "losers"]}
+  ]
+}

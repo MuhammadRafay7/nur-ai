@@ -1,0 +1,25 @@
+{
+  "category": "dua",
+  "description": "Supplications and adhkar — daily duas, morning/evening, situational, from Quran and Sunnah",
+  "pass_criteria": {
+    "min_arabic_rate": 0.95,
+    "zero_fabrication": true
+  },
+  "questions": [
+    {"id": "dua_01", "question": "What is the dua to say before eating? Give Arabic, transliteration, and meaning.", "expected_refs": [], "must_contain": ["Arabic", "Bismillah", "food"]},
+    {"id": "dua_02", "question": "What is the dua after eating? Give Arabic, transliteration, source, and meaning.", "expected_refs": ["tirmidhi:3458"], "must_contain": ["Arabic", "alhamdulillah", "fed", "Muslim"]},
+    {"id": "dua_03", "question": "What is the morning adhkar the Prophet ﷺ recommended? Give at least 3 with Arabic.", "expected_refs": [], "must_contain": ["Arabic", "morning", "Ayat al-Kursi", "three times"]},
+    {"id": "dua_04", "question": "What is the dua when waking up from sleep? Give Arabic, transliteration, and source.", "expected_refs": [], "must_contain": ["Arabic", "life", "death", "sleep"]},
+    {"id": "dua_05", "question": "What is the dua for entering the masjid and leaving it? Give Arabic and hadith source.", "expected_refs": [], "must_contain": ["Arabic", "mercy", "enter", "blessings"]},
+    {"id": "dua_06", "question": "What are the duas for traveling? Give the dua to recite when starting a journey.", "expected_refs": [], "must_contain": ["Arabic", "subhana", "Allahu akbar", "travel"]},
+    {"id": "dua_07", "question": "What is the dua for hardship and distress? Give Dua Yunus with Arabic.", "expected_refs": ["quran:21:87"], "must_contain": ["Arabic", "la ilaha illa anta", "subhanaka", "wrong"]},
+    {"id": "dua_08", "question": "What is the dua after salah (prayer)? Give the common post-prayer adhkar with Arabic.", "expected_refs": [], "must_contain": ["Arabic", "SubhanAllah", "Alhamdulillah", "Allahu Akbar", "33 times"]},
+    {"id": "dua_09", "question": "What is the dua for seeking forgiveness (Sayyid al-Istighfar)? Give full Arabic and source.", "expected_refs": ["bukhari:6306"], "must_contain": ["Arabic", "astaghfiruk", "created me", "slave"]},
+    {"id": "dua_10", "question": "What are the duas from Surah Al-Baqarah? List the key supplications from this surah.", "expected_refs": ["quran:2:201", "quran:2:285", "quran:2:286"], "must_contain": ["Arabic", "rabbana", "good in this world", "good in the hereafter"]},
+    {"id": "dua_11", "question": "What is the dua to say upon hearing the adhan (call to prayer)?", "expected_refs": ["bukhari:614"], "must_contain": ["Arabic", "perfect call", "prayer", "station"]},
+    {"id": "dua_12", "question": "What is the evening adhkar? Give at least 3 supplications with Arabic.", "expected_refs": [], "must_contain": ["Arabic", "evening", "protection", "Ayat al-Kursi"]},
+    {"id": "dua_13", "question": "What is the dua for entering and leaving the toilet? Give Arabic and source.", "expected_refs": ["bukhari:142"], "must_contain": ["Arabic", "protection", "khubuth", "khabaith"]},
+    {"id": "dua_14", "question": "What are the duas for the sick person and visiting the sick? Give Arabic and hadith.", "expected_refs": ["bukhari:5675"], "must_contain": ["Arabic", "Allahuma", "Lord of mankind", "remove the harm"]},
+    {"id": "dua_15", "question": "What is the dua for seeking guidance (Istikhara)? Give the full Arabic text and how to perform it.", "expected_refs": ["bukhari:1166"], "must_contain": ["Arabic", "knowledge", "power", "choose"]}
+  ]
+}

@@ -1,0 +1,30 @@
+{
+  "category": "fiqh",
+  "description": "Islamic jurisprudence — prayer, fasting, zakat, hajj, purity, halal/haram, family law",
+  "pass_criteria": {
+    "min_reference_rate": 0.85,
+    "zero_fabrication": true
+  },
+  "questions": [
+    {"id": "fiqh_01", "question": "How many rak'ahs are in each of the five daily prayers? List all five.", "expected_refs": [], "must_contain": ["Fajr", "Dhuhr", "Asr", "Maghrib", "Isha"]},
+    {"id": "fiqh_02", "question": "What are the conditions (shurut) that make wudu (ablution) valid? What nullifies it?", "expected_refs": [], "must_contain": ["intention", "water", "face", "arms", "head", "feet"]},
+    {"id": "fiqh_03", "question": "What is the nisab for zakat on gold, silver, and money? What is the rate?", "expected_refs": [], "must_contain": ["85 grams", "595 grams", "2.5%", "nisab"]},
+    {"id": "fiqh_04", "question": "When does fasting in Ramadan become obligatory? List those who are exempt.", "expected_refs": ["quran:2:183"], "must_contain": ["Muslim", "adult", "sane", "traveller", "sick", "pregnant"]},
+    {"id": "fiqh_05", "question": "What are the pillars (arkan) of Hajj? Distinguish from wajibat.", "expected_refs": [], "must_contain": ["ihram", "Arafah", "tawaf", "sa'i"]},
+    {"id": "fiqh_06", "question": "What are the conditions for a valid Islamic marriage (nikah)?", "expected_refs": [], "must_contain": ["wali", "witnesses", "mahr", "offer", "acceptance"]},
+    {"id": "fiqh_07", "question": "What foods are haram in Islam? Cite Quran and Hadith.", "expected_refs": ["quran:5:3", "quran:2:173"], "must_contain": ["pork", "blood", "carrion", "alcohol"]},
+    {"id": "fiqh_08", "question": "What is the ruling on riba (interest/usury) in Islam? Cite the Quranic verse.", "expected_refs": ["quran:2:275", "quran:2:278"], "must_contain": ["forbidden", "Allah", "war"]},
+    {"id": "fiqh_09", "question": "Explain the different types of divorce (talaq) in Islam.", "expected_refs": ["quran:2:229"], "must_contain": ["talaq", "iddah", "revocable", "irrevocable"]},
+    {"id": "fiqh_10", "question": "What are the obligatory acts (fara'id) of ghusl (ritual bath)?", "expected_refs": [], "must_contain": ["intention", "rinse mouth", "nose", "entire body"]},
+    {"id": "fiqh_11", "question": "What are the conditions for zakah on agricultural produce (zakat al-zuru')? What is the rate?", "expected_refs": [], "must_contain": ["nisab", "5 wasq", "irrigated", "10%", "5%"]},
+    {"id": "fiqh_12", "question": "What breaks the fast (what are the muftirat of Ramadan fasting)?", "expected_refs": [], "must_contain": ["eating", "drinking", "intercourse", "intentional"]},
+    {"id": "fiqh_13", "question": "How is the Islamic will (wasiyyah) different from inheritance (miraath)? What are the shares in miraath?", "expected_refs": ["quran:4:11"], "must_contain": ["one-third", "shares", "heirs"]},
+    {"id": "fiqh_14", "question": "What is the ruling on music and musical instruments in Islam? What do the four madhabs say?", "expected_refs": [], "must_contain": ["scholarly", "opinion", "differ"]},
+    {"id": "fiqh_15", "question": "Explain the concept of halal slaughter (dhabihah). What are its conditions?", "expected_refs": [], "must_contain": ["bismillah", "swift", "sharp", "windpipe", "blood"]},
+    {"id": "fiqh_16", "question": "What are the conditions for Friday prayer (Salat al-Jumu'ah) to be obligatory?", "expected_refs": ["quran:62:9"], "must_contain": ["male", "adult", "Muslim", "settled", "khutbah"]},
+    {"id": "fiqh_17", "question": "What is fidya and kaffarah? When are they required?", "expected_refs": [], "must_contain": ["expiation", "fasting", "feeding"]},
+    {"id": "fiqh_18", "question": "What are the Islamic rules for purification from najasah (ritual impurity)?", "expected_refs": [], "must_contain": ["water", "remove", "trace"]},
+    {"id": "fiqh_19", "question": "Is it permissible to pray behind an imam of a different madhab?", "expected_refs": [], "must_contain": ["valid", "prayer", "valid"]},
+    {"id": "fiqh_20", "question": "What is the Islamic ruling on combining (jam') and shortening (qasr) prayers during travel?", "expected_refs": ["quran:4:101"], "must_contain": ["travel", "two rak'ahs", "combine", "distance"]}
+  ]
+}

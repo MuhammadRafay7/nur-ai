@@ -52,7 +52,6 @@ Thumbs.db
 desktop.ini
 
 # ─── IDE ─────────────────────────────────────────────────────────────────────
-.vscode/
 .idea/
 *.swp
 *.swo
@@ -60,3 +59,12 @@ desktop.ini
 # ─── Reports (regeneratable) ──────────────────────────────────────────────────
 04_evaluation/reports/
 02_dataset_formatting/quality_reports/
+
+# ─── RAG index (regeneratable — run build_rag_index.py) ──────────────────────
+06_local_test_harness/rag_index/
+
+# ─── Saved chat conversations ─────────────────────────────────────────────────
+06_local_test_harness/saved_conversations/
+temp_auto_push.bat
+temp_interactive_push.bat
+.gitignore

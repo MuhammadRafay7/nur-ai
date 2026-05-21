@@ -1,0 +1,31 @@
+{
+  "category": "aqeedah",
+  "description": "Islamic theology and belief — Tawhid, pillars of Iman, attributes of Allah, shirk, predestination",
+  "pass_criteria": {
+    "min_arabic_rate": 0.8,
+    "min_reference_rate": 0.9,
+    "zero_fabrication": true
+  },
+  "questions": [
+    {"id": "aqeedah_01", "question": "What are the six pillars of Iman (faith) in Islam? Cite the hadith of Jibreel.", "expected_refs": ["muslim:8"], "must_contain": ["angels", "books", "messengers", "last day", "divine decree"]},
+    {"id": "aqeedah_02", "question": "What is Tawhid? Explain its three categories with Quranic evidence.", "expected_refs": ["quran"], "must_contain": ["Tawhid al-Rububiyyah", "Tawhid al-Uluhiyyah", "Tawhid al-Asma"]},
+    {"id": "aqeedah_03", "question": "What does the Quran say about shirk (associating partners with Allah)? Cite exact verses.", "expected_refs": ["quran:4:48", "quran:4:116"], "must_contain": ["forgive", "shirk", "unforgivable"]},
+    {"id": "aqeedah_04", "question": "Explain the concept of Qadar (divine decree) — its four levels.", "expected_refs": [], "must_contain": ["knowledge", "writing", "will", "creation"]},
+    {"id": "aqeedah_05", "question": "What does the Quran say about the attributes of Allah? Cite Surah Al-Ikhlas and Ayat al-Kursi.", "expected_refs": ["quran:112:1", "quran:2:255"], "must_contain": ["Arabic", "Ahad", "Samad"]},
+    {"id": "aqeedah_06", "question": "What are the Angels (Mala'ikah) in Islam? Name at least 5 with their duties, citing relevant hadith.", "expected_refs": [], "must_contain": ["Jibreel", "Mikail", "Israfil", "Azrael"]},
+    {"id": "aqeedah_07", "question": "What are the revealed Books of Allah that Muslims must believe in? Cite Quranic evidence.", "expected_refs": ["quran:2:285"], "must_contain": ["Tawrat", "Injeel", "Zabur", "Quran"]},
+    {"id": "aqeedah_08", "question": "Explain belief in the Day of Judgement (Yawm al-Qiyamah) with Quranic references.", "expected_refs": ["quran"], "must_contain": ["resurrection", "accountability", "paradise", "hellfire"]},
+    {"id": "aqeedah_09", "question": "What is bid'ah (religious innovation) in Islam? What did the Prophet ﷺ say about it?", "expected_refs": [], "must_contain": ["innovation", "rejected", "every innovation"]},
+    {"id": "aqeedah_10", "question": "What does Islam say about intercession (shafa'a)? Who can intercede on the Day of Judgement?", "expected_refs": ["quran:2:255"], "must_contain": ["Prophet", "permission", "Allah"]},
+    {"id": "aqeedah_11", "question": "What is the Islamic belief regarding the Prophets and Messengers? How many are mentioned in the Quran?", "expected_refs": ["quran:4:163"], "must_contain": ["25", "infallible", "human"]},
+    {"id": "aqeedah_12", "question": "Explain the concept of Tawakkul (reliance on Allah) with Quran and Hadith.", "expected_refs": ["quran:65:3"], "must_contain": ["trust", "means", "rely"]},
+    {"id": "aqeedah_13", "question": "What is the Islamic concept of the soul (Ruh)? What does the Quran say about its nature?", "expected_refs": ["quran:17:85"], "must_contain": ["command", "knowledge", "little"]},
+    {"id": "aqeedah_14", "question": "What are the 99 Names of Allah (Asmaul Husna)? Give the first 20 with Arabic and meanings.", "expected_refs": [], "must_contain": ["Arabic", "Rahman", "Rahim", "Malik"]},
+    {"id": "aqeedah_15", "question": "What does Islam say about the punishment of the grave (Azab al-Qabr)? Cite relevant hadiths.", "expected_refs": [], "must_contain": ["grave", "punishment", "Munkar", "Nakir"]},
+    {"id": "aqeedah_16", "question": "Explain Al-Wala wal-Bara (loyalty and disavowal) in Islamic aqeedah.", "expected_refs": ["quran:60:4"], "must_contain": ["loyalty", "believers", "disavowal"]},
+    {"id": "aqeedah_17", "question": "What is the Islamic view of Jesus (Isa عليه السلام)? How does Islam differ from Christianity?", "expected_refs": ["quran:4:171", "quran:3:59"], "must_contain": ["prophet", "messenger", "not God", "not crucified"]},
+    {"id": "aqeedah_18", "question": "What does the Quran say about creation of the heavens and earth? Cite the relevant verses.", "expected_refs": ["quran:21:30"], "must_contain": ["six days", "heavens", "earth"]},
+    {"id": "aqeedah_19", "question": "Explain the concept of Tawbah (repentance) in Islam. What are its conditions?", "expected_refs": ["quran:66:8"], "must_contain": ["sincere", "stop", "regret", "resolve"]},
+    {"id": "aqeedah_20", "question": "What is the Islamic belief about Paradise (Jannah)? Describe it with Quranic verses.", "expected_refs": ["quran"], "must_contain": ["rivers", "eternal", "pleasure of Allah"]}
+  ]
+}

@@ -1,0 +1,25 @@
+{
+  "category": "ethics",
+  "description": "Islamic character, manners, and moral conduct — adab, akhlaq, rights",
+  "pass_criteria": {
+    "min_reference_rate": 0.8,
+    "zero_fabrication": true
+  },
+  "questions": [
+    {"id": "ethics_01", "question": "What does Islam say about honoring one's parents? Cite Quran and Hadith.", "expected_refs": ["quran:17:23", "quran:31:14"], "must_contain": ["Arabic", "parents", "uff", "lower wing"]},
+    {"id": "ethics_02", "question": "What are the rights of a Muslim upon another Muslim according to hadith?", "expected_refs": ["muslim:2162"], "must_contain": ["greeting", "visit sick", "funeral", "advice", "sneeze"]},
+    {"id": "ethics_03", "question": "What does Islam say about honesty and truthfulness? Cite Quran and Hadith.", "expected_refs": ["quran:9:119"], "must_contain": ["truthful", "truthfulness", "paradise", "sadiqin"]},
+    {"id": "ethics_04", "question": "What does Islam say about the rights of neighbors? Cite relevant hadiths.", "expected_refs": [], "must_contain": ["neighbor", "forty houses", "Jibreel", "inherit"]},
+    {"id": "ethics_05", "question": "What does Islam say about jealousy (hasad) and envy? What are the remedies?", "expected_refs": ["quran:113:5"], "must_contain": ["hasad", "destroy", "good deeds", "envy"]},
+    {"id": "ethics_06", "question": "What did the Prophet ﷺ say about the importance of smiling and cheerfulness?", "expected_refs": [], "must_contain": ["smile", "charity", "sadaqa"]},
+    {"id": "ethics_07", "question": "What does Islam say about controlling anger? Cite the relevant hadiths.", "expected_refs": ["bukhari:6116"], "must_contain": ["do not be angry", "strong", "controls himself"]},
+    {"id": "ethics_08", "question": "What are the rights of children in Islam? What obligations do parents have?", "expected_refs": [], "must_contain": ["education", "feed", "just", "name", "teach Quran"]},
+    {"id": "ethics_09", "question": "What does Islam say about waste and extravagance (israf and tabdhir)?", "expected_refs": ["quran:17:26", "quran:7:31"], "must_contain": ["waste", "brothers of shaytan", "moderate"]},
+    {"id": "ethics_10", "question": "What are the virtues of feeding the poor and hungry in Islam? Cite Quran and Hadith.", "expected_refs": ["quran:76:8", "quran:107:3"], "must_contain": ["feed", "poor", "orphan", "reward"]},
+    {"id": "ethics_11", "question": "What does Islam say about keeping promises and fulfilling covenants?", "expected_refs": ["quran:17:34", "quran:5:1"], "must_contain": ["fulfill", "promise", "covenant", "questioned"]},
+    {"id": "ethics_12", "question": "What is the Islamic ruling and ethics around privacy and entering homes?", "expected_refs": ["quran:24:27"], "must_contain": ["permission", "greet", "enter", "spy"]},
+    {"id": "ethics_13", "question": "What does the Quran say about modesty (haya') and lowering the gaze?", "expected_refs": ["quran:24:30", "quran:24:31"], "must_contain": ["Arabic", "lower", "gaze", "guard", "modesty"]},
+    {"id": "ethics_14", "question": "What does Islam say about arrogance (kibr)? Cite the relevant hadiths.", "expected_refs": [], "must_contain": ["arrogance", "paradise", "mustard seed", "one who has"]},
+    {"id": "ethics_15", "question": "How does Islam view good manners with non-Muslims? Can Muslims be kind to non-Muslim neighbors?", "expected_refs": ["quran:60:8"], "must_contain": ["kind", "just", "not forbidden", "not fight"]}
+  ]
+}

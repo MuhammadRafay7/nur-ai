@@ -1,0 +1,25 @@
+{
+  "category": "seerah",
+  "description": "Biography of the Prophet Muhammad ﷺ — key events, battles, companions, and milestones",
+  "pass_criteria": {
+    "min_reference_rate": 0.8,
+    "zero_fabrication": true
+  },
+  "questions": [
+    {"id": "seerah_01", "question": "When and where was the Prophet Muhammad ﷺ born? Describe his early life.", "expected_refs": [], "must_contain": ["570", "Makkah", "Year of the Elephant", "Abdullah", "Aminah"]},
+    {"id": "seerah_02", "question": "What was the first revelation received by the Prophet ﷺ? Describe the full event.", "expected_refs": ["quran:96:1"], "must_contain": ["Hira", "Jibreel", "Read", "Khadijah"]},
+    {"id": "seerah_03", "question": "What were the key events of the Battle of Badr? When did it happen and what was its significance?", "expected_refs": [], "must_contain": ["624", "Badr", "313", "Quraysh", "victory"]},
+    {"id": "seerah_04", "question": "Describe the Hijra (migration) of the Prophet ﷺ from Makkah to Madinah. What year did it occur?", "expected_refs": [], "must_contain": ["622", "Madinah", "Abu Bakr", "cave", "Thawr"]},
+    {"id": "seerah_05", "question": "Who were the four rightly-guided Caliphs (Khulafa al-Rashidun)? List them in order with key achievements.", "expected_refs": [], "must_contain": ["Abu Bakr", "Umar", "Uthman", "Ali"]},
+    {"id": "seerah_06", "question": "Describe the Farewell Sermon (Khutbat al-Wada') of the Prophet ﷺ. What were its main points?", "expected_refs": [], "must_contain": ["Arafah", "rights", "women", "Quran", "Sunnah"]},
+    {"id": "seerah_07", "question": "What happened at the Battle of Uhud? What lessons does it teach?", "expected_refs": [], "must_contain": ["625", "Uhud", "archers", "Hamza", "lesson"]},
+    {"id": "seerah_08", "question": "Who were the 10 companions promised paradise (al-asharah al-mubasharun)?", "expected_refs": [], "must_contain": ["Abu Bakr", "Umar", "Uthman", "Ali", "Talha", "Zubayr"]},
+    {"id": "seerah_09", "question": "Describe the Treaty of Hudaybiyyah. Why was it called a 'clear victory' in the Quran?", "expected_refs": ["quran:48:1"], "must_contain": ["Hudaybiyyah", "truce", "ten years", "victory"]},
+    {"id": "seerah_10", "question": "When and how did the Prophet ﷺ pass away? Describe his final days.", "expected_refs": [], "must_contain": ["632", "11 AH", "fever", "Abu Bakr", "Aisha"]},
+    {"id": "seerah_11", "question": "What was the Isra and Mi'raj (Night Journey and Ascension)? What was prescribed during this event?", "expected_refs": ["quran:17:1"], "must_contain": ["al-Aqsa", "ascension", "five prayers", "Jibreel"]},
+    {"id": "seerah_12", "question": "Describe the personality and character of the Prophet ﷺ. How does the Quran describe him?", "expected_refs": ["quran:68:4"], "must_contain": ["exalted character", "mercy", "kind"]},
+    {"id": "seerah_13", "question": "What were the major miracles of the Prophet Muhammad ﷺ besides the Quran?", "expected_refs": [], "must_contain": ["Quran", "moon", "water", "isra"]},
+    {"id": "seerah_14", "question": "Describe the Conquest of Makkah (Fath al-Makkah). What year did it occur?", "expected_refs": [], "must_contain": ["630", "8 AH", "amnesty", "Ka'bah", "idols"]},
+    {"id": "seerah_15", "question": "Who was Khadijah (رضي الله عنها)? Describe her role in the life of the Prophet ﷺ.", "expected_refs": [], "must_contain": ["first wife", "first Muslim", "supported", "Jibreel"]}
+  ]
+}
