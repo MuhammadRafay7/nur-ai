@@ -36,10 +36,8 @@ htmlcov/
 venv/
 .venv/
 env/
-.env
 
 # ─── Secrets ─────────────────────────────────────────────────────────────────
-.env.local
 *.secret
 hf_token.txt
 
@@ -68,3 +66,6 @@ desktop.ini
 temp_auto_push.bat
 temp_interactive_push.bat
 .gitignore
+branch_structure.json
+config.bat
+node_modules
