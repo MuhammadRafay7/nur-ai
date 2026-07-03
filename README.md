@@ -123,5 +123,3 @@ Get a free HuggingFace token at: https://huggingface.co/settings/tokens
 - [Training Log](docs/training_log.md)
 - [Evaluation Results](docs/evaluation_results.md)
 - [Integration Guide](docs/integration_guide.md)
-# nur-ai
-# nur-ai
